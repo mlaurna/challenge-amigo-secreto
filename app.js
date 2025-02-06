@@ -19,7 +19,19 @@ function agregarAmigo() {
         //Agrega el amigo a la lista, si el valor es valido
         amigos.push(nuevoAmigo);
         console.log(amigos);
-        listaAmigo.innerHTML = `amigo: ${nuevoAmigo}`;
+        //listaAmigo.innerHTML = `amigo: ${nuevoAmigo}`;
+
+        //Limpia la lista de amigos antes de actualizarla
+        listaAmigo.innerHTML = '';
+
+        for (let i = 0; i < amigos.length; i++) {
+            //Crea un nuevo elemento li
+            const li = document.createElement('li');
+            //Establece el texto del <li> como el nombre del amigo
+            li.textContent = amigos[i];
+            //Agregar el <li> a la lista <ul>
+            listaAmigo.appendChild(li);
+        }
     }
     limpiarCaja();
 }

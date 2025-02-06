@@ -24,6 +24,7 @@ function agregarAmigo() {
         //Limpia la lista de amigos antes de actualizarla
         listaAmigo.innerHTML = '';
 
+        //Recorre el array de amigos
         for (let i = 0; i < amigos.length; i++) {
             //Crea un nuevo elemento li
             const li = document.createElement('li');

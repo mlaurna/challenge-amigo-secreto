@@ -28,3 +28,7 @@ function agregarAmigo() {
 function limpiarCaja() {
     return document.getElementById('amigoRecibido').value = '';
 }
+
+function actualizarAmigos() {
+    //Seleccionar el espacio donde se colocarán los amigos
+}

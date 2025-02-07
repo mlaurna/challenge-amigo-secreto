@@ -4,6 +4,15 @@ let amigos = [];
 let nuevoAmigo = '';
 let listaAmigo = document.getElementById('listaAmigos');
 
+//Simplifica la asignación de texto a elemento HTML.
+function asignarElemento(elemento, texto) {
+    //Selecciona el elemento HTML y lo asigna a una variable
+    let elementoHTML = document.querySelector(elemento);
+    //Asigna el texto al elemento HTML
+    elementoHTML.innerHTML = texto;
+    return;
+}
+
 function actualizarAmigo() {
     //Limpia la lista de amigos antes de actualizarla
     listaAmigo.innerHTML = '';

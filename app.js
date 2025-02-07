@@ -37,15 +37,13 @@ function agregarAmigo() {
     //Verifica si el nombre ya está en la lista
     if (amigos.includes(nuevoAmigo)) {
         // Agregar el mensaje de advertencia si no existe ya
-        alert('No se puede repetir los nombres');
-    } else if (nuevoAmigo == '') { //Verifica si el valor es vacío. En ese caso envia un alert
-        alert('Por favor, inserte un nombre');
+        asignarTextoElemento('#advertencia', 'No pueden repetirse los nombres', 'advertencia-nombre');
+    } else if (nuevoAmigo == '') {
+        asignarTextoElemento('#advertencia', 'Debes colocar un nombre', 'advertencia-nombre');
     } else {
         //Agrega el amigo a la lista, si el valor es valido
         amigos.push(nuevoAmigo);
-        console.log(amigos);
-        //listaAmigo.innerHTML = `amigo: ${nuevoAmigo}`;
-
+        limparAdvertencia();
         actualizarAmigo();
         
         console.log(`Amigo agregado: ${nuevoAmigo}`);
@@ -53,15 +51,6 @@ function agregarAmigo() {
     }
     limpiarCaja();
     return;
-}
-
-//Limpia el campo de entrada como el principio
-function limpiarCaja() {
-    document.getElementById('amigoRecibido').value = '';
-    if (document.querySelector('.advertencia')) {
-        mensajeAdvertencia.remove();
-    }
-    return; 
 }
 
 function sortearAmigo() {
@@ -78,4 +67,16 @@ function sortearAmigo() {
     } else {
         alert('Debes colocar un nombre');
     }
+}
+
+//Limpia el campo de entrada como el principio
+function limpiarCaja() {
+    document.getElementById('amigoRecibido').value = '';
+    return; 
+}
+
+function limparAdvertencia() {
+    asignarTextoElemento('#advertencia', '');
+    document.getElementById('advertencia').style.marginTop = '0px';
+    return;
 }

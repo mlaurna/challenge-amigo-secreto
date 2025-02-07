@@ -36,9 +36,10 @@ function agregarAmigo() {
     
     //Verifica si el nombre ya está en la lista
     if (amigos.includes(nuevoAmigo)) {
-        // Agregar el mensaje de advertencia si no existe ya
+        //Agrega mensaje si el nombre ya está en la lista
         asignarTextoElemento('#advertencia', 'No pueden repetirse los nombres', 'messsage-name');
     } else if (nuevoAmigo == '') {
+        //Agrega mensaje si no se colocó ningun nombre
         asignarTextoElemento('#advertencia', 'Debes colocar un nombre', 'messsage-name');
     } else {
         //Agrega el amigo a la lista, si el valor es valido
@@ -69,12 +70,13 @@ function sortearAmigo() {
     }
 }
 
-//Limpia el campo de entrada como el principio
+//Limpia el campo de entrada 
 function limpiarCaja() {
     document.getElementById('amigoRecibido').value = '';
     return; 
 }
 
+//Limpia el campo de advertencia
 function limparAdvertencia() {
     asignarTextoElemento('#advertencia', '');
     document.getElementById('advertencia').style.marginTop = '0px';

@@ -1,8 +1,9 @@
 :root {
-    --color-primary: #4B69FD;
+    /*--color-primary: #4B69FD;*/
+    --color-primary: #00446a;
     --color-secondary: #FFF9EB;
     --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
+    --color-button: #fe652b; 
     --color-button-hover: #e55720;
     --color-text: #444444;
     --color-white: #FFFFFF;
@@ -159,4 +160,13 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+.mensaje-sorteo {
+    color: #28a745; /* Verde claro */
+    font-family: "Merriweather", serif; /* Fuente más agradable */
+    font-size: 24px; /* Un tamaño de fuente más grande */
+    font-weight: bold; /* Negrita para llamar la atención */
+    text-align: center; /* Centrado del texto */
+    margin-top: 20px; /* Espaciado superior */
 }

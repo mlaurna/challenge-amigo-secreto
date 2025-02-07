@@ -5,7 +5,7 @@
     --color-tertiary: #C4C4C4;
     --color-button: #fe652b; 
     --color-button-hover: #e55720;
-    --color-text: #444444;
+    --color-text: #474B4E;
     --color-white: #FFFFFF;
 }
 
@@ -151,7 +151,7 @@ ul {
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-button);
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .button-draw img {

@@ -4,8 +4,6 @@ let amigos = [];
 let nuevoAmigo = '';
 let listaAmigo = document.getElementById('listaAmigos');
 
-console.log(nuevoAmigo) ;
-
 function actualizarAmigo() {
     //Limpia la lista de amigos antes de actualizarla
     listaAmigo.innerHTML = '';
@@ -54,4 +52,17 @@ function limpiarCaja() {
         mensajeAdvertencia.remove();
     }
     return; 
+}
+
+function sortearAmigo() {
+    //Comprobar que la lista no esté vacía
+    if (amigos.length > 0) {
+        //Generar un índice aleatorio
+        let amigoSorteado = Math.floor(Math.random() * (amigos.length));
+        //Obtener el nombre sorteado
+        console.log(amigos[amigoSorteado]);
+        //Mostrar el resultado   
+    } else {
+        alert('Debes colocar un nombre');
+    }
 }

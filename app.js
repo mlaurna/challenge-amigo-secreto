@@ -5,11 +5,12 @@ let nuevoAmigo = '';
 let listaAmigo = document.getElementById('listaAmigos');
 
 //Simplifica la asignación de texto a elemento HTML.
-function asignarTextoElemento(elemento, texto) {
+function asignarTextoElemento(elemento, texto, clase) {
     //Selecciona el elemento HTML y lo asigna a una variable
     let elementoHTML = document.querySelector(elemento);
     //Asigna el texto al elemento HTML
     elementoHTML.innerHTML = texto;
+    elementoHTML.classList.add(clase);
     return;
 }
 
@@ -72,7 +73,8 @@ function sortearAmigo() {
         console.log(amigos[amigoSorteado]);
         //Muestra el resultado
         asignarTextoElemento('#listaAmigos', '');
-        asignarTextoElemento('#listaAmigos', `El amigo sorteado es ${amigos[amigoSorteado]}!`);
+        asignarTextoElemento('#listaAmigos', `El amigo sorteado es ${amigos[amigoSorteado]}!`, 'mensaje-sorteo');
+
     } else {
         alert('Debes colocar un nombre');
     }

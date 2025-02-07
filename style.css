@@ -162,6 +162,7 @@ ul {
     background-color: var(--color-button-hover);
 }
 
+/* Clase para mostrar el mensaje de nombre sorteado*/
 .mensaje-sorteo {
     color: #28a745; /* Verde claro */
     font-family: "Merriweather", serif; /* Fuente más agradable */
@@ -169,4 +170,14 @@ ul {
     font-weight: bold; /* Negrita para llamar la atención */
     text-align: center; /* Centrado del texto */
     margin-top: 20px; /* Espaciado superior */
+}
+
+/* Estilo para los mensajes de advertencia */
+.advertencia-nombre {
+    color: red;
+    font-size: 25px;
+    font-weight: bold;
+    font-family: "Inter", serif;
+    text-align: center;
+    transition: margin-top 0.6s ease; /* Animación suave */
 }

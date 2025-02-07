@@ -9,11 +9,12 @@ console.log(nuevoAmigo) ;
 function agregarAmigo() {
     //Recibe el valor (nombre|string) enviado por el usuario
     nuevoAmigo = document.getElementById('amigoRecibido').value;
-    console.log(`Amigo agregado: ${nuevoAmigo}`);
-    console.log(typeof(nuevoAmigo));
     
-    //Verifica si el valor es vacío. En ese caso envia un alert
-    if (nuevoAmigo == '') {
+    //Verifica si el nombre ya está en la lista
+    if (amigos.includes(nuevoAmigo)) {
+        // Agregar el mensaje de advertencia si no existe ya
+        alert('No se puede repetir los nombres');
+    } else if (nuevoAmigo == '') { //Verifica si el valor es vacío. En ese caso envia un alert
         alert('Por favor, inserte un nombre');
     } else {
         //Agrega el amigo a la lista, si el valor es valido
@@ -33,13 +34,20 @@ function agregarAmigo() {
             //Agregar el <li> a la lista <ul>
             listaAmigo.appendChild(li);
         }
+        
+        console.log(`Amigo agregado: ${nuevoAmigo}`);
+        console.log(typeof(nuevoAmigo));
     }
     limpiarCaja();
 }
 
 //Limpia el campo de entrada como el principio
 function limpiarCaja() {
-    return document.getElementById('amigoRecibido').value = '';
+    document.getElementById('amigoRecibido').value = '';
+    if (document.querySelector('.advertencia')) {
+        mensajeAdvertencia.remove();
+    }
+    return; 
 }
 
 function actualizarAmigos() {

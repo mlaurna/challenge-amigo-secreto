@@ -37,9 +37,9 @@ function agregarAmigo() {
     //Verifica si el nombre ya está en la lista
     if (amigos.includes(nuevoAmigo)) {
         // Agregar el mensaje de advertencia si no existe ya
-        asignarTextoElemento('#advertencia', 'No pueden repetirse los nombres', 'advertencia-nombre');
+        asignarTextoElemento('#advertencia', 'No pueden repetirse los nombres', 'messsage-name');
     } else if (nuevoAmigo == '') {
-        asignarTextoElemento('#advertencia', 'Debes colocar un nombre', 'advertencia-nombre');
+        asignarTextoElemento('#advertencia', 'Debes colocar un nombre', 'messsage-name');
     } else {
         //Agrega el amigo a la lista, si el valor es valido
         amigos.push(nuevoAmigo);
@@ -62,7 +62,7 @@ function sortearAmigo() {
         console.log(amigos[amigoSorteado]);
         //Muestra el resultado
         asignarTextoElemento('#listaAmigos', '');
-        asignarTextoElemento('#listaAmigos', `El amigo sorteado es ${amigos[amigoSorteado]}!`, 'mensaje-sorteo');
+        asignarTextoElemento('#listaAmigos', `El amigo sorteado es ${amigos[amigoSorteado]}!`, 'message-draw');
 
     } else {
         alert('Debes colocar un nombre');

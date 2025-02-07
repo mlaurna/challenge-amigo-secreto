@@ -131,7 +131,7 @@ ul {
     list-style-type: none;
     color: var(--color-text);
     font-family: "Inter", sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     margin: 20px 0;
 }
 
@@ -163,9 +163,9 @@ ul {
 }
 
 /* Clase para mostrar el mensaje de nombre sorteado*/
-.mensaje-sorteo {
+.message-draw {
     color: #28a745; /* Verde claro */
-    font-family: "Merriweather", serif; /* Fuente más agradable */
+    font-family: "Inter", serif; /* Fuente más agradable */
     font-size: 24px; /* Un tamaño de fuente más grande */
     font-weight: bold; /* Negrita para llamar la atención */
     text-align: center; /* Centrado del texto */
@@ -173,7 +173,7 @@ ul {
 }
 
 /* Estilo para los mensajes de advertencia */
-.advertencia-nombre {
+.messsage-name {
     color: red;
     font-size: 25px;
     font-weight: bold;

@@ -2,6 +2,8 @@
 //Almacena los nombres
 let amigos = [];
 let nuevoAmigo = '';
+let cantidadAmigos = 1;
+let limiteAmigos = 20;
 let listaAmigo = document.getElementById('listaAmigos');
 
 //Simplifica la asignación de texto a elemento HTML.
@@ -33,22 +35,28 @@ function actualizarAmigo() {
 function agregarAmigo() {
     //Recibe el valor (nombre|string) enviado por el usuario
     nuevoAmigo = document.getElementById('amigoRecibido').value;
-    
-    //Verifica si el nombre ya está en la lista
-    if (amigos.includes(nuevoAmigo)) {
-        //Agrega mensaje si el nombre ya está en la lista
-        asignarTextoElemento('#advertencia', 'No pueden repetirse los nombres', 'messsage-name');
-    } else if (nuevoAmigo == '') {
-        //Agrega mensaje si no se colocó ningun nombre
-        asignarTextoElemento('#advertencia', 'Debes colocar un nombre', 'messsage-name');
-    } else {
-        //Agrega el amigo a la lista, si el valor es valido
-        amigos.push(nuevoAmigo);
-        limparAdvertencia();
-        actualizarAmigo();
+
+    //Limita la cantidad de amigos
+    if (amigos.length < limiteAmigos) {
+            //Verifica si el nombre ya está en la lista
+        if (amigos.includes(nuevoAmigo)) {
+            //Agrega mensaje si el nombre ya está en la lista
+            asignarTextoElemento('#advertencia', 'No pueden repetirse los nombres', 'messsage-name');
+        } else if (nuevoAmigo == '') {
+            //Agrega mensaje si no se colocó ningun nombre
+            asignarTextoElemento('#advertencia', 'Debes colocar un nombre', 'messsage-name');
+        } else {
+            //Agrega el amigo a la lista, si el valor es valido
+            amigos.push(nuevoAmigo);
+            limparAdvertencia();
+            actualizarAmigo();
         
-        console.log(`Amigo agregado: ${nuevoAmigo}`);
-        console.log(typeof(nuevoAmigo));
+            console.log(`Amigo agregado: ${nuevoAmigo}`);
+            console.log(typeof(nuevoAmigo));
+        }
+    } else {
+        //Si el limite se superó
+        asignarTextoElemento('#advertencia', `El límite máximo de amigos es ${limiteAmigos}`, 'messsage-name');
     }
     limpiarCaja();
     return;

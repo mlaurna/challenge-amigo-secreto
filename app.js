@@ -3,7 +3,7 @@
 let amigos = [];
 let nuevoAmigo = '';
 let cantidadAmigos = 1;
-let limiteAmigos = 20;
+let limiteAmigos = prompt('Indique el número de amigos a sortear, el mínimo es 2');
 let listaAmigo = document.getElementById('listaAmigos');
 
 //Simplifica la asignación de texto a elemento HTML.

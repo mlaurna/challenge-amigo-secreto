@@ -3,8 +3,30 @@
 let amigos = [];
 let nuevoAmigo = '';
 let cantidadAmigos = 1;
-let limiteAmigos = prompt('Indique el número de amigos a sortear, el mínimo es 2');
 let listaAmigo = document.getElementById('listaAmigos');
+let limiteAmigos = 0;
+
+function establecerLimite() {
+    // Obtiene el valor del input y lo convierte a número
+    let valor = parseInt(document.getElementById('cantidadAmigos').value);
+    
+    // Verifica que el valor sea un número y que sea mayor o igual a 2
+    if (isNaN(valor) || valor < 2) {
+        asignarTextoElemento('#advertencia', 'El número debe ser mayor o igual a 2', 'message-name');
+    } else {
+        limiteAmigos = valor;
+        limparAdvertencia(); 
+
+        let container = document.getElementById('cantidad-container');
+        container.classList.add('fade-out');
+        
+        // Oculta completamente el contenedor luego de la transición 
+        container.addEventListener('transitionend', function() {
+            container.style.display = 'none';
+            document.getElementById('input-container').style.marginTop = '20px';
+        }, { once: true });
+    }
+}
 
 //Simplifica la asignación de texto a elemento HTML.
 function asignarTextoElemento(elemento, texto, clase) {
@@ -44,10 +66,10 @@ function agregarAmigo() {
             //Verifica si el nombre ya está en la lista
         if (amigos.includes(nuevoAmigo)) {
             //Agrega mensaje si el nombre ya está en la lista
-            asignarTextoElemento('#advertencia', 'No pueden repetirse los nombres', 'messsage-name');
+            asignarTextoElemento('#advertencia', 'No pueden repetirse los nombres', 'message-name');
         } else if (nuevoAmigo == '') {
             //Agrega mensaje si no se colocó ningun nombre
-            asignarTextoElemento('#advertencia', 'Debes colocar un nombre', 'messsage-name');
+            asignarTextoElemento('#advertencia', 'Debes colocar un nombre', 'message-name');
         } else {
             //Agrega el amigo a la lista, si el valor es valido
             amigos.push(nuevoAmigo);
@@ -59,7 +81,7 @@ function agregarAmigo() {
         }
     } else {
         //Si el limite se superó
-        asignarTextoElemento('#advertencia', `El límite máximo de amigos es ${limiteAmigos}`, 'messsage-name');
+        asignarTextoElemento('#advertencia', `El límite máximo de amigos es ${limiteAmigos}`, 'message-name');
     }
     limpiarCaja();
     return;
@@ -73,11 +95,12 @@ function sortearAmigo() {
         //Obtiene el amigo sorteado
         console.log(amigos[amigoSorteado]);
         //Muestra el resultado
+        limparAdvertencia();
         asignarTextoElemento('#listaAmigos', '');
         asignarTextoElemento('#listaAmigos', `El amigo sorteado es ${amigos[amigoSorteado]}!`, 'message-draw');
 
     } else {
-        alert('Debes colocar un nombre');
+        asignarTextoElemento('#advertencia', 'Debes colocar un nombre', 'message-name')
     }
 }
 

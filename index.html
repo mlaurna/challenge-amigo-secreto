@@ -19,8 +19,15 @@
         
         <section class="input-section">
             <h2 class="section-title">Digite el nombre de sus amigos</h2>
+
+            <div id="cantidad-container" class="input-wrapper">
+            <input type="number" id="cantidadAmigos" class="input-name" min="2" placeholder="Indique la cantidad de jugadores a sortear, mínimo 2">
+            <button class="button-add" onclick="establecerLimite()">Establecer cantidad</button>
+            </div>
+
             <div id="advertencia" class="advertencia"></div>
-            <div class="input-wrapper">
+
+            <div id="input-container" class="input-wrapper">
                 <input type="text" id="amigoRecibido" class="input-name" placeholder="Escribe un nombre">
                 <button class="button-add" onclick="agregarAmigo()">Añadir</button>
             </div>

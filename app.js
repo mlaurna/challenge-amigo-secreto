@@ -36,6 +36,9 @@ function agregarAmigo() {
     //Recibe el valor (nombre|string) enviado por el usuario
     nuevoAmigo = document.getElementById('amigoRecibido').value;
 
+    // Convierte el nombre a mayúsculas
+    nuevoAmigo = nuevoAmigo.toUpperCase();
+
     //Limita la cantidad de amigos
     if (amigos.length < limiteAmigos) {
             //Verifica si el nombre ya está en la lista

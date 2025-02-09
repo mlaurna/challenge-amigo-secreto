@@ -162,22 +162,35 @@ ul {
     background-color: var(--color-button-hover);
 }
 
-/* Clase para mostrar el mensaje de nombre sorteado*/
+/* Clase para mostrar el mensaje de nombre sorteado */
 .message-draw {
-    color: #28a745; /* Verde claro */
-    font-family: "Inter", serif; /* Fuente más agradable */
-    font-size: 24px; /* Un tamaño de fuente más grande */
-    font-weight: bold; /* Negrita para llamar la atención */
-    text-align: center; /* Centrado del texto */
-    margin-top: 20px; /* Espaciado superior */
+    color: #28a745;
+    font-family: "Inter", serif;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* Estilo para los mensajes de advertencia */
-.messsage-name {
+.message-name {
     color: red;
     font-size: 25px;
     font-weight: bold;
     font-family: "Inter", serif;
     text-align: center;
-    transition: margin-top 0.6s ease; /* Animación suave */
+    transition: margin-top 0.6s ease; 
+}
+
+#cantidad-container {
+    opacity: 1;
+    height: auto;
+    transition: opacity 0.5s ease, height 0.5s ease;
+    overflow: hidden 0.01s;       /* Para que la contracción se vea limpia */
+  }
+  
+#cantidad-container.fade-out {
+    opacity: 0;
+    height: 0;              /* Contrae el contenedor a 0 de altura */
+    pointer-events: none;
 }

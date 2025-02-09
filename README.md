@@ -26,7 +26,8 @@ Con este programa web, puedes agregar a tus amigos a una lista, establecer un l�
 ## 🧑‍💻 **¿Cómo usarlo?**
 
 ### 1. **Carga la página**
-Al abrir la página, se te pedirá que ingreses el número de amigos a sortear. ¡Recuerda que deben ser al menos dos! 😅
+Al abrir la página, debes ingresar un número mayor o igual a 2 con el botón "Establecer cantidad", ese número será la cantidad de amigos a sortear. ¡Recuerda que deben ser al menos dos! 😅 
+El contenedor se desvanecerá y colapsará de forma suave, liberando el espacio de manera gradual para que la caja donde ingresas los nombres se reposicione sin saltos bruscos. 
 
 ### 2. **Añadir amigos**
 Escribe los nombres de los amigos que deseas agregar al sorteo y haz clic en **"Añadir"**. El sistema te notificará si intentas añadir un nombre vacío o duplicado.
